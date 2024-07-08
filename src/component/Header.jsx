@@ -8,13 +8,13 @@ const Header = props => {
       <StatusBar barStyle="dark-content" backgroundColor={'green'} />
       <Text style={{color: '#212121'}}>Hello</Text>
       <Text style={{fontSize: 22, fontWeight: 'bold', color: '#212121'}}>
-        haloooo Nisa'
+        haloooo Riefka
       </Text>
       <View style={{flexDirection: 'row'}}>
         <TextInput
           value={props.pencarian}
           onChangeText={text => props.setPencarian(text)}
-          placeholder="Cari harga promo"
+          placeholder="Cari"
           style={{
             backgroundColor: 'green',
             elevation: 3,

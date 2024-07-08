@@ -9,16 +9,16 @@ const Data =[
 
 ];
 
-const LaundryApp = ({navigation}) => {
+const KasirApp = ({navigation}) => {
   return (
     <View style={{padding:20}}>
       <FlatList
       data={Data}
       horizontal={true}
       renderItem={({item}) => (
-      <TouchableOpacity style={{width:50, marginRight:35}} key={item.id} >
-        <View style={{width:50, height:50, backgroundColor:'gray', borderRadius:10, alignItems:'center', justifyContent:'center'}}>
-          <MaterialCommunityIcons name={item.namaIcon} color='PURPLE' size={30} onPress={() => {navigation.navigate('kirim')}} />
+      <TouchableOpacity style={{width:50, marginRight:35}} key={item.id} onPress={() => {navigation.navigate('Layanan')}} >
+        <View style={{width:50, height:50, backgroundColor:'gray', borderRadius:10, alignItems:'center', justifyContent:'center'}} >
+          <MaterialCommunityIcons name={item.namaIcon} color='PURPLE' size={30}  />
         </View>
         <Text style={{color:'black', textAlign:'center'}}>{item.judulIcon}</Text>
       </TouchableOpacity>
@@ -29,6 +29,6 @@ const LaundryApp = ({navigation}) => {
 }
 
 
-export default LaundryApp
+export default KasirApp
 
 const styles = StyleSheet.create({})

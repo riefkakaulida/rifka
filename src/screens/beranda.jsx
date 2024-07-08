@@ -13,35 +13,35 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-import Header from '../components/Header';
-import Jadwal from '../components/Jadwal';
+import Header from '../component/Header';
+import Jadwal from '../component/Jadwal';
 
 const App = () => {
   const [pencarian, setPencarian] = useState('');
   const [kategori, setKategori] = useState([
-    {namaKategori: 'wangi'},
-    {namaKategori: 'rapi'},
-    {namaKategori: 'bersih'},
-    {namaKategori: 'Cari laundry'},
-    {namaKategori: 'laundry Terdekat'},
-    {namaKategori: 'Laundry termurah'},
+    {namaKategori: 'Semua'},
+    {namaKategori: 'Makanan'},
+    {namaKategori: 'Minuman'},
+    {namaKategori: 'Sayuran'},
+    {namaKategori: 'Nasi'},
+    {namaKategori: 'Hotplate'},
   ]);
 
   const [artikel, setArtikel] = useState([
     {
-      judul: 'Resep wangi sepanjang hari',
-      deskripsi: 'inilah resep rahasia agar anda tetap wangi seharian',
-      image: require('../screens/img/2.png'),
+      judul: 'Ikan bakar sambal matah',
+      harga: 'Rp20.000',
+      image: require('../screens/img/ikan-bakar.jpeg'),
     },
     {
-      judul: 'Resep Rahasia Agar Tetap bersih',
-      deskripsi: 'inilah resep rahasia agar anda tetap bersih',
-      image: require('../screens/img/2.png'),
+      judul: 'Ikan bakar saus madu',
+      harga: 'Rp20.000',
+      image: require('../screens/img/ikan-bakar-madu.jpg'),
     },
     {
-      judul: 'Resep Rahasia Agar Tetap Sehat',
-      deskripsi: 'inilah resep rahasia agar anda tetap rapi',
-      image: require('../screens/img/2.png'),
+      judul: 'Ayam penyet',
+      harga: 'Rp20.000',
+      image: require('../screens/img/ayam-penyet.jpeg'),
     },
   ]);
 
@@ -55,7 +55,6 @@ const App = () => {
           marginTop: 10,
         }}>
         <Header pencarian={pencarian} setPencarian={setPencarian} />
-        <Jadwal />
         <View style={{flexDirection: 'row', marginTop: 30}}>
           <Text style={{color: 'green', fontWeight: 'bold'}}>Kategori</Text>
           <TouchableOpacity
@@ -107,6 +106,7 @@ const App = () => {
                 <View
                   style={{
                     height: 200,
+                    width: 300,
                     marginBottom: 10,
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
@@ -150,7 +150,7 @@ const App = () => {
                     style={{
                       marginHorizontal: 10,
                     }}>
-                    {item.deskripsi}
+                    {item.harga}
                   </Text>
                 </View>
               </TouchableOpacity>

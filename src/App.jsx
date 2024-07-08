@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import LaundryApp from './screens/laundry';
+import KasirApp from './screens/kasir';
 import Account from './screens/account';
 import kirim from './screens/kirim';
 import Beranda from './screens/beranda';
@@ -16,26 +16,25 @@ const Stack = createStackNavigator();
 const BottomTab = () => {
   return (
     <Tab.Navigator screenOptions={{
-      tabBarActiveTintColor: 'green',
-      headerStyle: {backgroundColor: "green"},
-      headerTitleStyle: {color: "white"}
+      tabBarActiveTintColor: '#FF5BAE',
+      headerStyle: {backgroundColor: "#FF5BAE"},
+      headerTitleStyle: {color: "black"}
     }}>
-      <Tab.Screen name='Laundry' component={LaundryApp} options={{
-      tabBarLabel: 'Laundry',
+      <Tab.Screen name='Kasir' component={KasirApp} options={{
+      tabBarLabel: 'Kasir',
+      tabBarIcon: ({ color }) => (
+        <MaterialCommunityIcons name="cash-register" color={color} size={25} />
+      ), }} />
+      <Tab.Screen name='Beranda' component={Beranda} options={{
+      tabBarLabel: 'Beranda',
       tabBarIcon: ({ color }) => (
         <MaterialCommunityIcons name="home" color={color} size={25} />
-      ), }} />
-      <Tab.Screen name='beranda' component={Beranda} options={{
-      tabBarLabel: 'check',
-      tabBarIcon: ({ color }) => (
-        <MaterialCommunityIcons name="poll" color={color} size={25} />
       ), }} />
       <Tab.Screen name='Account' component={Account} options={{
           tabBarLabel: 'Account',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={25} />
           ),
-      
       }} />
       </Tab.Navigator>
   )
@@ -46,7 +45,7 @@ const App = () => {
      <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen options={{headerShown:false}} name='root' component={BottomTab} />
-        <Stack.Screen name='kirim' component={kirim} />
+        <Stack.Screen name='Layanan' component={kirim} />
       </Stack.Navigator>
      </NavigationContainer>
   );
